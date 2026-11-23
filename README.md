@@ -20,9 +20,10 @@ so I want to make versions of viable games with java that are playable locally t
 ## Setup
 
 ```bash
-git clone https://github.com/OwlKing13/GameHub
-cd GameHub
-./install.sh   # not done yet
+git clone https://github.com/OwlKing13/ConnectFour
+cd ConnectFour
+javac ConnectFour.java
+java ConnectFour
 ```
 
 ## Usage
