@@ -30,14 +30,7 @@ java ConnectFour
 
 Just run and play it.
 
-```bash
-./backup.sh ~/Documents # no clue yet
-```
-
 ## Roadmap
-
-Features you haven't built yet but plan to (pull these from your
-"Schedule" quadrant in the Eisenhower Matrix).
 
 - [ ] Expand into other games
 - [ ] Make a more polished interface
