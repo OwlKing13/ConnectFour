@@ -46,8 +46,46 @@ public class ConnectFour {
                     IO.println("Game Ends in a Draw!");
                     return;
                 }
-            }
+            }   
+	    while (invalid == true) {
+                ans  = IO.readln("Player " + player + "(" + sign + ") - Choose a column:\n");
+                if (ans != null && !ans.isEmpty() && !ans.equals("")
+                        && (ans.equals("1") || ans.equals("2") || ans.equals("3")
+                        || ans.equals("4") || ans.equals("5") || ans.equals("6") || ans.equals("7"))) {
+                    ansN = Integer.parseInt(ans) - 1;
+                    room = (board[1][ansN]).equals(".");
+                }
 
+                if (ans == null || ans.isEmpty() || ans.equals("") || !room) {
+                    IO.println("Invalid Column");
+                    invalid = true;
+                } else if (ansN >= 0 && ansN <= 6 && room) {
+                    invalid = false;
+                } else {
+                    IO.println("Invalid Column");
+                    invalid = true;
+                }
+            }
+            for (int i = 0; i < 7; i += 1) {
+                if (notFound && (board[6 - i][ansN]).equals(".")) {
+                    board[6 - i][ansN] = sign;
+                    notFound = false;
+                }
+            }
+            boardS = "";
+            for (int i = 0; i < 7; i += 1) {
+                for (int j = 0; j < 7; j += 1) {
+                    if (i != 6 && j != 6) {
+                        boardS += board[i][j] + " ";
+                    } else if (i != 6 && j == 6) {
+                        boardS += board[i][j] + "\n";
+                    } else if (i == 6 && j != 6) {
+                        boardS += board[i][j] + " ";
+                    } else if (i == 6 && j == 6) {
+                        boardS += board[i][j];
+                    }
+                }
+            }
         } while (game);
     }
 }
