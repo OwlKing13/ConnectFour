@@ -85,7 +85,21 @@ public class ConnectFour {
                         boardS += board[i][j];
                     }
                 }
+	    }
+
+	    if (player.equals("1 ")) {
+                player = "2 ";
+                sign = "O";
+            } else if (player.equals("2 ")) {
+                player = "1 ";
+                sign = "X";
             }
+            invalid = true;
+            notFound = true;
+            ans = "";
+            ansN = -1;
+            sum = 0;
+            room = true;
         } while (game);
     }
 }
