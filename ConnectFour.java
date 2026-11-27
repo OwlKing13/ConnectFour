@@ -86,7 +86,53 @@ public class ConnectFour {
                     }
                 }
 	    }
-
+	    for (int i = 1; i < 4; i += 1) {
+                for (int j = 0; j < 7; j += 1) {
+                    if ((board[i][j]).equals(board[i + 1][j])
+                            && (board[i + 1][j]).equals(board[i + 2][j])
+                            && (board[i + 2][j]).equals(board[i + 3][j]) && !(board[i][j]).equals(".")) {
+                        IO.println(boardS);
+                        IO.println("Player " + player + "Wins!");
+                        return;
+                    }
+                }
+            }
+            for (int i = 1; i < 7; i += 1) {
+                for (int j = 0; j < 4; j += 1) {
+                    if ((board[i][j]).equals(board[i][j + 1])
+                            && (board[i][j + 1]).equals(board[i][j + 2])
+                            && (board[i][j + 2]).equals(board[i][j + 3])
+                            && !(board[i][j]).equals(".")) {
+                        IO.println(boardS);
+                        IO.println("Player " + player + "Wins!");
+                        return;
+                    }
+                }
+            }
+            for (int i = 1; i < 4; i += 1) {
+                for (int j = 0; j < 4; j += 1) {
+                    if ((board[i][j]).equals(board[i + 1][j + 1])
+                            && (board[i + 1][j + 1]).equals(board[i + 2][j + 2])
+                            && (board[i + 2][j + 2]).equals(board[i + 3][j + 3])
+                            && !(board[i][j]).equals(".")) {
+                        IO.println(boardS);
+                        IO.println("Player " + player + "Wins!");
+                        return;
+                    }
+                }
+            }
+            for (int i = 4; i < 7; i += 1) {
+                for (int j = 0; j < 4; j += 1) {
+                    if ((board[i][j]).equals(board[i - 1][j + 1])
+                            && (board[i - 1][j + 1]).equals(board[i - 2][j + 2])
+                            && (board[i - 2][j + 2]).equals(board[i - 3][j + 3])
+                            && !(board[i][j]).equals(".")) {
+                        IO.println(boardS);
+                        IO.println("Player " + player + "Wins!");
+                        return;
+                    }
+                }
+            }	
 	    if (player.equals("1 ")) {
                 player = "2 ";
                 sign = "O";
